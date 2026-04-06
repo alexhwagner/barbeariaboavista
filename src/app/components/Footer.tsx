@@ -1,6 +1,6 @@
 import { m } from 'motion/react';
 import { Phone, Instagram, MapPin, Clock } from 'lucide-react';
-import logo from '../../assets/MINHA LOGO .png';
+import logo from '../../assets/logo-opt.png';
 
 export function Footer() {
   const handleWhatsApp = () => {
