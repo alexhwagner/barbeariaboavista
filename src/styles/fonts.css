@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&display=swap');
+
+* {
+  font-family: 'Bodoni Moda', serif;
+}
+
+body {
+  font-family: 'Bodoni Moda', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+p, span, a, button {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+}

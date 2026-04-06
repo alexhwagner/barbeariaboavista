@@ -1,0 +1,102 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* ── Performance: GPU-composited CSS animations ── */
+@keyframes hero-diagonal-scroll {
+  to { transform: translate3d(70px, 70px, 0); }
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: -80px;
+  opacity: 0.1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 35px,
+    rgba(0, 0, 0, 0.1) 35px,
+    rgba(0, 0, 0, 0.1) 70px
+  );
+  animation: hero-diagonal-scroll 20s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.hero-scroll-icon {
+  animation: hero-bounce 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pattern,
+  .hero-scroll-icon {
+    animation: none;
+  }
+}
+
+/* ── Title shine/shimmer effect ── */
+@keyframes hero-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-title-shine {
+  background: linear-gradient(
+    90deg,
+    #8A8A8A 0%,
+    #C0C0C0 25%,
+    #FFFFFF 50%,
+    #C0C0C0 75%,
+    #8A8A8A 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-shine 3s linear infinite;
+}
+
+.hero-title-shine-accent {
+  background: linear-gradient(
+    90deg,
+    #8B0000 0%,
+    #DC143C 20%,
+    #FF6B6B 50%,
+    #DC143C 80%,
+    #8B0000 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hero-shine 3s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* ── Floating WhatsApp pulse animation ── */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+/* ── CTA button pulse glow ── */
+@keyframes cta-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
+.cta-pulse {
+  animation: cta-pulse 2s ease-in-out infinite;
+}
